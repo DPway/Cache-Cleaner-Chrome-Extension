@@ -4,12 +4,25 @@
 var dt = 15;
 var rq;
 var vTimer = 0;
+var vPeriod = 1000 * 60 * 60;
 
 
 chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
     rq = request;
     dt = rq.timerval;
+    switch (rq.periodval){
+        case 1:
+            vPeriod = 1000 * 60 * 60;
+            break;
+        case 2:
+            vPeriod = 1000 * 60 * 60 * 24;
+            break;
+        case 3:
+            vPeriod = 1000 * 60 * 60 * 24 * 7;
+            break;
+    }
+
     if (dt > 1){
         clearInterval(vTimer);
         FtimerRun();
@@ -25,16 +38,16 @@ chrome.runtime.onMessage.addListener(
 
 
 function FtimerRun(){
-    // alert("ok");
+
     vTimer = setInterval(function(){ 
 
-        alert(rq.timerval + " sec");
+        // alert(rq.timerval + " sec");
         
         var callback = function () {
-            // console.log (dt);
+            document.getElementById("stopcheck").style.backgroundColor = "#EE8";
         };
           
-        var millisecondsTime = 1000 * 60 * 60 * 24 * 1;
+        var millisecondsTime = vPeriod;
         var TimeAgo = (new Date()).getTime() - millisecondsTime;
 
         chrome.browsingData.remove({
@@ -68,12 +81,13 @@ function FtimerRun(){
 function Frun(){
        
         var callback = function () {
-            alert("ok");
+            // alert("ok");
+            document.getElementById("runbut").style.backgroundColor = "#CF9";
         };
           
-        var millisecondsTime = 1000 * 60 * 60 * 24 * 1;
+        var millisecondsTime = vPeriod;
         var TimeAgo = (new Date()).getTime() - millisecondsTime;
-
+console.log ('ok');
         chrome.browsingData.remove({
             "since": TimeAgo,
             "originTypes": {

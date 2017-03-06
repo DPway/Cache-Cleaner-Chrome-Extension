@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Cache Cleaner</title>
+
+    </head>
+    <body>
+        <h2>Cache Cleaner</h2>
+            
+            <input type="checkbox" id="contentval1" class="contentval">
+            <label for="contentval1"> Cache </label><br>
+            <input type="checkbox" id="contentval2" class="contentval">
+            <label for="contentval2"> Cookies </label><br>
+            <input type="checkbox" id="contentval3" class="contentval">
+            <label for="contentval3"> FormData </label><br>
+            <input type="checkbox" id="contentval4" class="contentval">
+            <label for="contentval4"> History </label><br>
+            <button id="runbut" style="padding:8px 25px 8px 25px; margin-bottom:10px;">Clean now!</button>
+            
+            <p> Or set interval</p>
+        	<input type="radio" name="timerval" id="timerval1" class="timerval" value="5">
+        	<label for="timerval1"> 10 seconds </label><br>
+        	<input type="radio" name="timerval" id="timerval2" class="timerval" value="10">
+        	<label for="timerval2"> 30 seconds </label><br>
+        	<input type="radio" name="timerval" id="timerval3" class="timerval" value="15">
+        	<label for="timerval3"> 1 min </label><br>
+        	<input type="radio" name="timerval" id="timerval4" class="timerval" value="30">
+        	<label for="timerval4"> 3 min </label>
+
+            <button id="stopcheck" style="padding:5px 15px 5px 15px; margin-top:10px;">Stop</button>
+
+        <script src="popup.js"></script>
+        <script src="background.js"></script>
+    </body>
+</html>

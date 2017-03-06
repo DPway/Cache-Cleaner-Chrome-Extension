@@ -1,0 +1,28 @@
+{
+    "manifest_version": 2,
+ 
+    "name": "Cache Cleaner",
+    "description": "This extension will clear cache and cookies according to schedule.",
+    "version": "1.0",
+ 
+	"icons": { 
+		"16": "ico16.png",
+        "48": "ico48.png",
+        "128": "ico128.png" },
+
+    "browser_action": {
+        "default_icon": "ico.png",
+        "default_popup": "popup.html"
+    },
+
+    "background": {
+    	"scripts": [
+	    	"background.js"
+	    	]
+  	},
+
+    "permissions": [
+        "browsingData",
+        "activeTab"
+    ]
+}

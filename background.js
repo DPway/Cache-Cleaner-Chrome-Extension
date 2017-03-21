@@ -40,7 +40,6 @@ chrome.runtime.onMessage.addListener(
 function FtimerRun(){
 
     vTimer = setInterval(function(){ 
-
         // alert(rq.timerval + " sec");
         
         var callback = function () {
@@ -87,7 +86,7 @@ function Frun(){
           
         var millisecondsTime = vPeriod;
         var TimeAgo = (new Date()).getTime() - millisecondsTime;
-console.log ('ok');
+
         chrome.browsingData.remove({
             "since": TimeAgo,
             "originTypes": {

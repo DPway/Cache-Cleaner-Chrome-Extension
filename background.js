@@ -80,7 +80,6 @@ function FtimerRun(){
 function Frun(){
        
         var callback = function () {
-            // alert("ok");
             document.getElementById("runbut").style.backgroundColor = "#CF9";
         };
           
